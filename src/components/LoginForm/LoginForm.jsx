@@ -1,6 +1,7 @@
-import { useState } from "react";
-import { useDispatch } from "react-redux";
-import { loginThunk } from "redux/auth/operations";
+import { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { logIn } from 'redux/auth/operations';
+import css from './LoginForm.module.css';
 
 const RegisterPage = () => {
   const [email, setEmail] = useState("");
@@ -15,33 +16,35 @@ const RegisterPage = () => {
       password,
     };
 
-    dispatch(loginThunk(formData));
+    dispatch(logIn(formData));
 
     setEmail("");
     setPassword("");
   };
 
   return (
-    <div>
-      <h1>LogIn</h1>
-      <form onSubmit={handleSubmit}>
+    <div className={css.sectionLoginForm}>
+      <h2 className={css.headerLoginForm}>LogIn</h2>
+      <form className={css.formLoginForm} onSubmit={handleSubmit}>
         <label>
-          E-mail:
+          <h3>E-mail:</h3>
           <input
+            className={css.inputLoginForm}
             type="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           />
         </label>
         <label>
-          Password:
+          <h3>Password:</h3>
           <input
+          className={css.inputLoginForm}
             type="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
         </label>
-        <button type="submit">SignIn</button>
+        <button className={css.btnLoginForm} type="submit">SignIn</button>
       </form>
     </div>
   );

@@ -2,13 +2,11 @@
 
 .input {
     width: 200px;
-    margin-bottom: 20px;
-    margin-right: 20px;
     border: 1px solid rgb(116, 116, 116);
     border-radius: 10px;
     padding: 4px 10px;
     display: flex;
-    margin: auto;
+    margin: 20px auto;
 }
 
 /* .input:hover,
@@ -18,4 +16,5 @@
 
 .sectionHeader {
     text-align: center;
+    margin-bottom: 20px;
 }

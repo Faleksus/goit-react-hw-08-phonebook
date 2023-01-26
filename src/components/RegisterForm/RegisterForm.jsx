@@ -1,48 +1,67 @@
-import { useState } from 'react'
 import { useDispatch } from 'react-redux';
-import { registerThunk } from 'redux/auth/operations';
+import { register } from 'redux/auth/operations';
+import { useState } from 'react';
+import css from './RegisterForm.module.css';
 
 const RegisterPage = () => {
-    const [name, setName] = useState('');
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
-    const dispatch = useDispatch();
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const dispatch = useDispatch();
 
+  const handleSubmit = e => {
+    e.preventDefault();
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
+    const formData = {
+      name,
+      email,
+      password,
+    };
 
-        const formData = {
-            name,
-            email,
-            password
-    }
-
-    dispatch(registerThunk(formData));
+    dispatch(register(formData));
 
     setName('');
     setEmail('');
     setPassword('');
-    }
-
+  };
 
   return (
-    <div>
-        <h1>Registration</h1>
-        <form onSubmit={handleSubmit}> 
-            <label>Name:
-                <input type="text" value={name} onChange={(e) => setName(e.target.value)} />
-            </label>
-            <label>E-mail:
-                <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} />
-            </label>
-            <label>Password:
-                <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
-            </label>
-            <button type='submit'>SignUp</button>
-        </form>
+    <div className={css.sectionRegisterForm}>
+      <h1 className={css.headerRegisterForm}>Registration</h1>
+      <form className={css.formRegisterForm} onSubmit={handleSubmit}>
+        <label className={css.labelRegisterForm}>
+          <h3>Name:</h3>
+          <input
+            className={css.inputRegisterForm}
+            type="text"
+            value={name}
+            onChange={e => setName(e.target.value)}
+          />
+        </label>
+        <label className={css.labelRegisterForm}>
+          <h3>E-mail:</h3>
+          <input
+            className={css.inputRegisterForm}
+            type="email"
+            value={email}
+            onChange={e => setEmail(e.target.value)}
+          />
+        </label>
+        <label className={css.labelRegisterForm}>
+          <h3>Password:</h3>
+          <input
+            className={css.inputRegisterForm}
+            type="password"
+            value={password}
+            onChange={e => setPassword(e.target.value)}
+          />
+        </label>
+        <button className={css.btnRegisterForm} type="submit">
+          SignUp
+        </button>
+      </form>
     </div>
-  )
-}
+  );
+};
 
 export default RegisterPage;

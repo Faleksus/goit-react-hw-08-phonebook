@@ -1,27 +1,23 @@
-.sectionUserMenu {
+.sectionNavigation {
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
   gap: 20px;
+  height: 100%;
   padding: 20px;
-  margin: 0;
 }
 
-.headerUserMenu{
-  font-size: 20px;
-  text-align: center;
-}
-
-.btnUserMenu {
+.btnNavigation {
   border: 1px solid rgb(233, 231, 231);
   border-radius: 5px;
   padding: 5px 10px;
   cursor: pointer;
+  background-color: rgb(233, 231, 231);
+  color: black;
 }
 
-.btnUserMenu:hover,
-.btnUserMenu:focus {
+.btnNavigation:hover,
+.btnNavigation:focus {
   background-color: rgb(167, 165, 165);
   color: #fff;
 }
-

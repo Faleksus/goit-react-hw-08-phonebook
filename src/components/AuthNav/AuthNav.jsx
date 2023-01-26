@@ -1,8 +1,21 @@
+import Login from "pages/LoginPage";
+import Register from "pages/RegisterPage";
 import { NavLink } from "react-router-dom";
+import css from "./AuthNav.module.css";
 
-export const AuthNav = () => (
-  <div>
-    <NavLink to="/register">Register</NavLink>
-    <NavLink to="/login">Login</NavLink>
-  </div>
-);
+export const AuthNav = () => {
+  return (
+    <section className={css.sectionAuthNav}>
+      <NavLink
+        className={css.btnAuthNav}
+        to="/register"
+        component={<Register />}
+      >
+        Register
+      </NavLink>
+      <NavLink className={css.btnAuthNav} to="/login" component={<Login />}>
+        Log In
+      </NavLink>
+    </section>
+  );
+};
