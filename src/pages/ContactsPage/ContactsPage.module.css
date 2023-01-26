@@ -1,0 +1,19 @@
+.container {
+  margin: 30px auto;
+  width: 420px;
+  border-radius: 20px;
+  box-shadow: 0 5px 15px rgb(0 0 0 / 35%);
+  padding: 50px;
+  background-color: rgb(255, 255, 255);
+  display: flex;
+  flex-direction: column;
+}
+
+.sectionPhonebook {
+  margin-bottom: 50px;
+}
+
+.sectionHeader {
+  margin-bottom: 20px;
+  text-align: center;
+}

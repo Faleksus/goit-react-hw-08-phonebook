@@ -1,25 +1,25 @@
-import { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { addContact } from "redux/operations";
-import css from "./ContactForm.module.css";
+import { useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { addContact } from 'redux/contacts/operations';
+import css from './ContactForm.module.css';
 
 export const ContactForm = () => {
   const [formData, setFormData] = useState({
-    name: "",
-    number: "",
+    name: '',
+    number: '',
   });
   const dispatch = useDispatch();
-  const contacts = useSelector((state) => state.contacts.items);
+  const contacts = useSelector(state => state.contacts.items);
 
-  const handleChange = (event) => {
+  const handleChange = event => {
     const { name, value } = event.currentTarget;
-    setFormData((prevState) => ({
+    setFormData(prevState => ({
       ...prevState,
       [name]: value,
     }));
   };
 
-  const handleSubmit = (event) => {
+  const handleSubmit = event => {
     event.preventDefault();
     contacts.find(
       ({ name: currentName }) =>
@@ -31,7 +31,7 @@ export const ContactForm = () => {
   };
 
   const reset = () => {
-    setFormData({ name: "", number: "" });
+    setFormData({ name: '', number: '' });
   };
 
   const { name, number } = formData;

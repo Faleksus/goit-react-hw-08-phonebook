@@ -1,13 +1,14 @@
-import PropTypes from "prop-types";
-import { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { deleteContact, fetchContacts } from "redux/operations";
-import { Contact } from "../Contact/Contact";
-import css from "./ContactList.module.css";
+import { selectContacts, selectFilter } from 'redux/contacts/selectors';
+import { useSelector, useDispatch } from 'react-redux';
+import { deleteContact, fetchContacts } from 'redux/contacts/operations';
+import { Contact } from 'components/Contact/Contact';
+import css from './ContactList.module.css';
+import { useEffect } from 'react';
 
 export const ContactList = () => {
-  const contacts = useSelector((state) => state.contacts.items);
-  const filter = useSelector((state) => state.filter.query);
+
+  const contacts = useSelector(selectContacts);
+  const filter = useSelector(selectFilter);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -15,13 +16,13 @@ export const ContactList = () => {
   }, [dispatch]);
 
   const changeFilter = () => {
-    return contacts.filter((contact) =>
+    return contacts.filter(contact =>
       contact.name.toLowerCase().includes(filter.toLowerCase().trim())
     );
   };
   const getVisibleContacts = changeFilter();
 
-  const onDelete = (id) => {
+  const onDelete = id => {
     dispatch(deleteContact(id));
   };
 
@@ -46,15 +47,4 @@ export const ContactList = () => {
       </p>
     </ul>
   );
-};
-
-ContactList.propTypes = {
-  contacts: PropTypes.arrayOf(
-    PropTypes.shape({
-      id: PropTypes.string.isRequired,
-      name: PropTypes.string.isRequired,
-      number: PropTypes.string.isRequired,
-    })
-  ),
-  onDelete: PropTypes.func,
 };
