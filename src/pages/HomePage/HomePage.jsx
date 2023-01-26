@@ -4,7 +4,7 @@ const Home = () => {
   return (
     <section className={css.sectionHome}>
       <h2 className={css.headerHome}>
-        Phonebook <b>Welcome page.</b> <b>Please, register or login.</b>
+        Вітаю у Phonebook <b>Якщо в твоєму Phonebook є номер Шольца</b> <b>Ти знаеш що робити &#128521;</b>
       </h2>
     </section>
   );

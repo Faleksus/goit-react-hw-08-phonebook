@@ -19,6 +19,11 @@
     height: 100px;
 }
 
+.subHeader {
+    font-size: 17px;
+    margin-bottom: 10px;
+}
+
 .formLoginForm {
     display: flex;
     flex-direction: column;

@@ -10,10 +10,10 @@ export const AppBar = () => {
 
   return (
     <section className={css.sectionAppBar}>
-      <container className={css.containerAppBar}>
+      <div className={css.containerAppBar}>
         <Navigation />
         {isLoggedIn ? <UserMenu /> : <AuthNav />}
-      </container>
+      </div>
     </section>
   );
 };

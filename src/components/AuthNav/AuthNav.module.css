@@ -7,11 +7,16 @@
 }
 
 .btnAuthNav {
-    display: flex;
-    align-items: center;
-    font-size: 20px;
-    padding: 4px 15px;
-    border: 1px solid #000;
-    border-radius: 10px;
-    color: #000;
+  border: 1px solid rgb(233, 231, 231);
+  border-radius: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+  background-color: rgb(233, 231, 231);
+  color: black;
+}
+
+.btnAuthNav:hover,
+.btnAuthNav:focus {
+  background-color: rgb(167, 165, 165);
+  color: #fff;
 }

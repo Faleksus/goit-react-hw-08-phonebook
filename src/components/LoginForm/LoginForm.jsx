@@ -27,7 +27,7 @@ const RegisterPage = () => {
       <h2 className={css.headerLoginForm}>LogIn</h2>
       <form className={css.formLoginForm} onSubmit={handleSubmit}>
         <label>
-          <h3>E-mail:</h3>
+          <h3 className={css.subHeader}>E-mail:</h3>
           <input
             className={css.inputLoginForm}
             type="email"
@@ -36,7 +36,7 @@ const RegisterPage = () => {
           />
         </label>
         <label>
-          <h3>Password:</h3>
+          <h3 className={css.subHeader}>Password:</h3>
           <input
           className={css.inputLoginForm}
             type="password"
